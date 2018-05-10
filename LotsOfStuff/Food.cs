@@ -47,8 +47,8 @@
         /// </returns>
         public override string ToString()
         {
-            return $"{Type} tem {days} dias, pesa {Weight} Kg e " +
-                $"custa {Value} EUR";
+            return $"{Type} tem {days} dias, pesa {Weight:f2} Kg e " +
+                $"custa {Value:f2} €";
         }
     }
 }

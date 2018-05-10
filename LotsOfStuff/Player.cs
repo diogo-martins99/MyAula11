@@ -38,5 +38,12 @@
             this.baseWeight = baseWeight;
             BagOfStuff = new Bag(maxBagItems);
         }
+
+        public override string ToString()
+        {
+            return $"Mochila com peso total de {Weight:f2} Kg, com {BagOfStuff.Count} " +
+                $"itens. A percentagem de peso dos itens é: " +
+                $"{(BagOfStuff.Weight / Weight):p2}";
+        }
     }
 }
