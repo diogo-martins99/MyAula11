@@ -20,6 +20,14 @@ namespace Aula11
         /// <summary>Método que testa este projeto</summary>
         private void TestProject()
         {
+
+            //Instanciar uma outra Bag
+            Bag otherBag = new Bag(5);
+
+            //Colocar itens dentro da outra bag
+            otherBag.AddThing(new Food(FoodType.Bread, 5f, 0.2f));
+            otherBag.AddThing(new Food(FoodType.Vegetables, 0.5f, 0.5f));
+
             // Instanciar um jogador com 70 quilos
             Player p = new Player(70.0f);
 
@@ -38,6 +46,8 @@ namespace Aula11
             p.BagOfStuff.AddThing(new Food(FoodType.Fruit, 0, 0.200f));
             // Mais uma arma
             p.BagOfStuff.AddThing(new Gun(2f, 0.09f, 25, 325f));
+            //Adicionar a outra Bag dentro desta
+            p.BagOfStuff.AddThing(otherBag);
 
             // Mostrar informação acerca dos conteúdos da mochila
             Console.WriteLine(p.BagOfStuff);
