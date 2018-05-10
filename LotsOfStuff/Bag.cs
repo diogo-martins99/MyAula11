@@ -6,8 +6,29 @@ namespace Aula11
     /// <summary>
     /// Classe que representa uma mochila ou saco que contem itens
     /// </summary>
-    public class Bag : List<IStuff>, IStuff
+    public class Bag : List<IStuff>, IStuff, IHasKarma
     {
+
+        public float Karma
+        {
+            get
+            {
+                int itemsWithKarma = 0;
+                float totalKarma = 0;
+                foreach (IStuff aThing in this)
+                {
+                    if(aThing is IHasKarma)
+                    {
+                        itemsWithKarma++;
+                        totalKarma += (aThing as IHasKarma).Karma;
+                    }
+                }
+                return totalKarma;
+            }
+        }
+
+
+
         /// <summary> 
         /// Propriedade Weight respeita o contrato com IHasWeight. No caso do
         /// Bag o peso vai corresponder ao peso total dos itens.

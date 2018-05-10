@@ -1,7 +1,7 @@
 ﻿namespace Aula11
 {
     /// <summary>Esta classe representa um jogador num jogo</summary>
-    public class Player : IHasWeight
+    public class Player : IHasWeight, IHasKarma
     {
 
         /// <summary>
